@@ -1059,9 +1059,9 @@ district_data = JSON.parse(%q|
 def district_to_info(districts,input)
 
 districts["data"].each do |district|
-    if district[8] == input
+    if district[8] == input #eighth hash
         return {
-           dis: district[8]  , percentage: district[9], population: district[10]
+           dis: district[8]  , percentage: district[9], population: district[10] #returns ninth, tenth, eleventh hashes
         }
     end
 end
@@ -1070,13 +1070,13 @@ end
 
 #puts district_to_info(district_data,"DISTRICT 13") 
 
-
+#first question
 def run(districts) 
-puts "What district do you want to look at?"
-user_district = gets.chomp
+puts "What district number do you want to look at?"
+user_district = gets.chomp.upcase
 begin 
 district_info = district_to_info(districts,user_district)
-puts district_info[:dis]
+puts district_info[:dis] + ":"
 puts "The percentage of attendance in this district is #{district_info[:percentage]}%"
 puts "The total population is #{district_info[:population]}"
 
