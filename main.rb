@@ -1073,7 +1073,9 @@ end
 #first question
 def run(districts) 
 puts "What district number do you want to look at?"
-user_district = gets.chomp.upcase
+user_num = gets.chomp
+user_district = "DISTRICT #{user_num}"
+user_district = user_num.to_i < 10 ? "DISTRICT 0#{user_num}" : user_district
 begin 
 district_info = district_to_info(districts,user_district)
 puts district_info[:dis] + ":"
