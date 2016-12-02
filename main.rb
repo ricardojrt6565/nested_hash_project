@@ -1076,28 +1076,30 @@ puts "What district number do you want to look at?"
 user_num = gets.chomp
 user_district = "DISTRICT #{user_num}"
 user_district = user_num.to_i < 10 ? "DISTRICT 0#{user_num}" : user_district
-begin 
 district_info = district_to_info(districts,user_district)
-puts district_info[:dis] + ":"
-puts "The percentage of attendance in this district is #{district_info[:percentage]}%"
-puts "The total population is #{district_info[:population]}"
-
-rescue 
-puts "Sorry that district does not exist."
+   puts district_info[:dis] + ":"
+   puts "The percentage of attendance in this district is #{district_info[:percentage]}%"
+   puts "The total population is #{district_info[:population]}"
+# else 
+# puts "Sorry that district does not exist."
+    
+#asks user if they want to know more information 
+puts "Do you want to learn about the Special ED District 75?"
+user_ans = gets.chomp.upcase
+if user_ans == "YES"
+   puts  "The percentage of attendance in this district is #{district_info[:percentage]}%"
+   puts "The total population is #{district_info[:population]}"
+else
+   puts "Do you want to learn about Alternative High Schools?"
+user_ans2 = gets.chomp.upcase
+if user_ans2 == "YES"
+   puts  "The percentage of attendance in this district is #{district_info[:percentage]}%"
+   puts "The total population is #{district_info[:population]}"
+ else  
+   puts "Sorry I do not understand."
 end
 end
+end
 
-# #asks user if they want to know more information 
-# puts "Do you want to learn about the Special ED District 75?"
-# user_ans = gets.chomp.upcase
-# if user_ans == "YES"
-   
-#    if user_ans == "NO"
-#    puts "Do you want to learn about Alternative High Schools?"
-#       if user_ans == "NO"
-#          puts "Do you want to learn about the Special ED District 75?"
-#       end
-#    end
-# end
 run(district_data)
 #Un-comment that^ when the program is "ready".
