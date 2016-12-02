@@ -1061,7 +1061,7 @@ def district_to_info(districts,input)
 districts["data"].each do |district|
     if district[8] == input #eighth hash
         return {
-           dis: district[8]  , percentage: district[9], population: district[10] #returns ninth, tenth, eleventh hashes
+           dis: district[8]  , percentage: district[9], population: district[10] #returns ninth, tenth, eleventh array
         }
     end
 end
@@ -1087,5 +1087,17 @@ puts "Sorry that district does not exist."
 end
 end
 
+# #asks user if they want to know more information 
+# puts "Do you want to learn about the Special ED District 75?"
+# user_ans = gets.chomp.upcase
+# if user_ans == "YES"
+   
+#    if user_ans == "NO"
+#    puts "Do you want to learn about Alternative High Schools?"
+#       if user_ans == "NO"
+#          puts "Do you want to learn about the Special ED District 75?"
+#       end
+#    end
+# end
 run(district_data)
 #Un-comment that^ when the program is "ready".
