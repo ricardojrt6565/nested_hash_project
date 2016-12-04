@@ -1058,8 +1058,8 @@ district_data = JSON.parse(%q|
 
 def district_to_info(districts,input)
 
-districts["data"].each do |district|
-    if district[8] == input #eighth hash
+districts["data"].each do |district| #iterates through each hash and array 
+    if district[8] == input #eighth array
         return {
            dis: district[8]  , percentage: district[9], population: district[10] #returns ninth, tenth, eleventh array
         }
@@ -1073,17 +1073,15 @@ end
 #first question
 def run(districts) 
 puts "What district number do you want to look at?"
-user_num = gets.chomp
-user_district = "DISTRICT #{user_num}"
-user_district = user_num.to_i < 10 ? "DISTRICT 0#{user_num}" : user_district
-district_info = district_to_info(districts,user_district)
-   puts district_info[:dis] + ":"
-   puts "The percentage of attendance in this district is #{district_info[:percentage]}%"
-   puts "The total population is #{district_info[:population]}"
-# else 
-# puts "Sorry that district does not exist."
-    
-#asks user if they want to know more information 
+user_num = gets.chomp #takes the users' input and sets it into a variable
+user_district = "DISTRICT #{user_num}" #sets another variable to the DISTRICT and the users' input 
+user_district = user_num.to_i < 10 ? "DISTRICT 0#{user_num}" : user_district #if the number is less than 10, then it will add a 0 in tens place and sets it back to the variable 
+district_info = district_to_info(districts,user_district) #sets the new method name equal to the iterated method above 
+   puts district_info[:dis] + ":"  #district num
+   puts "The percentage of attendance in this district is #{district_info[:percentage]}%" #puts out the percentage
+   puts "The total population is #{district_info[:population]}" #puts population num
+   
+#asks user if they want to know more information about the last three districts
 puts "Do you want to learn about the Special ED District 75?"
 user_ans = gets.chomp.upcase
 if user_ans == "YES"
@@ -1095,8 +1093,16 @@ user_ans2 = gets.chomp.upcase
 if user_ans2 == "YES"
    puts  "The percentage of attendance in this district is #{district_info[:percentage]}%"
    puts "The total population is #{district_info[:population]}"
- else  
-   puts "Sorry I do not understand."
+else
+    puts "Do you want to learn about the Citywide?"
+user_ans3 = gets.chomp.upcase
+if user_ans3 == "YES"
+   puts  "The percentage of attendance in this district is #{district_info[:percentage]}%"
+   puts "The total population is #{district_info[:population]}"
+else  
+   puts "OK bye."
+
+end
 end
 end
 end
