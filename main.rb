@@ -1076,28 +1076,31 @@ puts "What district number do you want to look at?"
 user_num = gets.chomp #takes the users' input and sets it into a variable
 user_district = "DISTRICT #{user_num}" #sets another variable to the DISTRICT and the users' input 
 user_district = user_num.to_i < 10 ? "DISTRICT 0#{user_num}" : user_district #if the number is less than 10, then it will add a 0 in tens place and sets it back to the variable 
-district_info = district_to_info(districts,user_district) #sets the new method name equal to the iterated method above 
+district_info = district_to_info(districts,user_district) #sets the new method name equal to the iterated method above
    puts district_info[:dis] + ":"  #district num
    puts "The percentage of attendance in this district is #{district_info[:percentage]}%" #puts out the percentage
    puts "The total population is #{district_info[:population]}" #puts population num
+  
+
+
    
 #asks user if they want to know more information about the last three districts
 puts "Do you want to learn about the Special ED District 75?"
 user_ans = gets.chomp.upcase
 if user_ans == "YES"
-   puts  "The percentage of attendance in this district is #{district_info[:percentage]}%"
+   puts  "The percentage of attendance for Special ED District 75 is #{district_info[:percentage]}%"
    puts "The total population is #{district_info[:population]}"
 else
    puts "Do you want to learn about Alternative High Schools?"
 user_ans2 = gets.chomp.upcase
 if user_ans2 == "YES"
-   puts  "The percentage of attendance in this district is #{district_info[:percentage]}%"
+   puts  "The percentage of attendance for Alternative High Schools is #{district_info[:percentage]}%"
    puts "The total population is #{district_info[:population]}"
 else
     puts "Do you want to learn about the Citywide?"
 user_ans3 = gets.chomp.upcase
 if user_ans3 == "YES"
-   puts  "The percentage of attendance in this district is #{district_info[:percentage]}%"
+   puts  "The overall percentage of attendance Citywide is #{district_info[:percentage]}%"
    puts "The total population is #{district_info[:population]}"
 else  
    puts "OK bye."
