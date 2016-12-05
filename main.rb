@@ -1081,29 +1081,26 @@ district_info = district_to_info(districts,user_district) #sets the new method n
    puts "The percentage of attendance in this district is #{district_info[:percentage]}%" #puts out the percentage
    puts "The total population is #{district_info[:population]}" #puts population num
   
-
-
-   
 #asks user if they want to know more information about the last three districts
 puts "Do you want to learn about the Special ED District 75?"
-user_ans = gets.chomp.upcase
-if user_ans == "YES"
-   puts  "The percentage of attendance for Special ED District 75 is #{district_info[:percentage]}%"
-   puts "The total population is #{district_info[:population]}"
+user_ans = gets.chomp.upcase #turns user's input all uppercase
+if user_ans == "YES" 
+   puts  "The percentage of attendance for Special ED District 75 is 83.21%"
+   puts "The total population is 21435"
 else
    puts "Do you want to learn about Alternative High Schools?"
-user_ans2 = gets.chomp.upcase
+user_ans2 = gets.chomp.upcase #turns user's input all uppercase
 if user_ans2 == "YES"
-   puts  "The percentage of attendance for Alternative High Schools is #{district_info[:percentage]}%"
-   puts "The total population is #{district_info[:population]}"
+   puts  "The percentage of attendance for Alternative High Schools is 63.81%"
+   puts "The total population is 7288"
 else
     puts "Do you want to learn about the Citywide?"
-user_ans3 = gets.chomp.upcase
+user_ans3 = gets.chomp.upcase #turns user's input all uppercase
 if user_ans3 == "YES"
-   puts  "The overall percentage of attendance Citywide is #{district_info[:percentage]}%"
-   puts "The total population is #{district_info[:population]}"
+   puts  "The overall percentage of attendance Citywide is 89.99%"
+   puts "The total population is 1002463"
 else  
-   puts "OK bye."
+   puts "OK bye." 
 
 end
 end
@@ -1111,4 +1108,4 @@ end
 end
 
 run(district_data)
-#Un-comment that^ when the program is "ready".
+#Un-comment that^ when the program is "ready"
